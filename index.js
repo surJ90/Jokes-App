@@ -20,16 +20,6 @@ app.get('/', async (req, res) => {
     }   
 });
 
-app.post('/', async (req, res) => {
-    try {
-        const response = await axios.get(`https://official-joke-api.appspot.com/random_joke`);
-        res.render('index.ejs', { data : response.data });
-    } catch (error) {
-        console.error(`Failed to load ${error}`);
-        res.render('index.ejs', { error : error.message });
-    }
-});
-
 app.listen(port, () => {
     console.log(`Listening on -> http://localhost:${port}`);
 });

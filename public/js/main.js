@@ -7,6 +7,6 @@ button.addEventListener("click", event => {
         button.textContent = "Hide";
     } else {
         punchline.style.visibility = "hidden";
-        button.textContent = "Punchline";
+        button.textContent = "PUNCHLINE👊";
     }
 });

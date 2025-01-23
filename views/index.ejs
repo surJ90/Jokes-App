@@ -9,24 +9,29 @@
 </head>
 <body>
 
-    <div>
-        <br>
-        <br>
-        <br>
+    <div class="top-margin">
     </div>
-    <div class="container mt-20">
+
+    <div class="container mt-50">
         <div class="card mt-20">
-            <h5 class="card-header" style="display: flex; justify-content: space-between;">Random Joke <a href="/" class="btn btn-outline-dark btn-sm"> Next </a></h5>
+            <h5 class="card-header">Random Joke <a href="/" class="btn btn-outline-success btn"> Next </a></h5>
             
-            <div class="card-body">
-            <h1 class="card-title m-3"> <%= data.setup %> </h1>
-            <h3 class="card-text m-3" style="visibility: hidden;" id="punchline"> <%= data.punchline %> </h3>
-            <button class="btn btn-primary m-3" id="toggler">Punchline</button>
+            <% if (locals.data) { %>
+                <div class="card-body mx-10">
+                <h1 class="card-title m-3"> <%= data.setup %> </h1>
+                <h3 class="card-text m-3" style="visibility: hidden;" id="punchline"> <%= data.punchline %> </h3>
+                <button class="btn btn-primary m-3" id="toggler">PUNCHLINE👊</button>
+            <% } else if (locals.error) { %>
+                <div class="card-body">
+                <h1 class="card-title m-3"> <%= error %> </h1>
+            <% } else { %>
+                <div class="card-body">
+                <h1 class="card-title m-3"> Error rendering data. </h1>
+            <% } %>
+            
             </div>
         </div>
     </div>
-    
-
 
     <script src="js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
