@@ -4,6 +4,10 @@
     align-items: center;
 }
 
-.top-margin {
-    margin-top: 2rem;
+html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
